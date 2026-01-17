@@ -516,33 +516,230 @@ footer {
     font-size: 0.9rem;
 }
 
+/* Experience */
+.experience-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.experience-card {
+    background: var(--card-bg);
+    padding: 2rem;
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    transition: 0.3s;
+    position: relative;
+    overflow: hidden;
+}
+
+.experience-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--accent-primary);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.experience-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 100%;
+    background: var(--gradient-main);
+}
+
+.exp-header {
+    display: flex;
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+    align-items: flex-start;
+}
+
+.exp-icon {
+    font-size: 2rem;
+    color: var(--accent-secondary);
+    background: rgba(255, 255, 255, 0.05);
+    padding: 1rem;
+    border-radius: 12px;
+}
+
+.exp-role h3 {
+    font-family: var(--font-heading);
+    font-size: 1.2rem;
+    margin-bottom: 0.2rem;
+}
+
+.company {
+    color: var(--accent-primary);
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+.exp-date {
+    margin-left: auto;
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    white-space: nowrap;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 0.3rem 0.8rem;
+    border-radius: 50px;
+}
+
+.exp-details {
+    list-style: disc;
+    margin-left: 1.5rem;
+    color: var(--text-secondary);
+}
+
+.exp-details li {
+    margin-bottom: 0.5rem;
+    font-size: 0.95rem;
+}
+
 /* Mobile Responsive */
 @media (max-width: 768px) {
-    .hero {
+    .navbar {
+        padding: 1rem;
         flex-direction: column;
+        gap: 1rem;
+    }
+
+    .container {
+        padding: 0 1rem;
+    }
+
+    .nav-links {
+        display: flex;
+        gap: 1rem;
+        font-size: 0.8rem;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .section {
+        padding: 4rem 0;
+    }
+
+    .section-title {
+        font-size: 2rem;
+        width: 100%;
+        left: auto;
+        transform: none;
+    }
+
+    .section-title::after {
+        margin: 10px auto;
+    }
+
+    .hero {
+        flex-direction: column-reverse;
         justify-content: center;
         text-align: center;
-        padding-top: 100px;
+        padding: 120px 1rem 4rem;
+        gap: 2rem;
     }
 
     .hero-content {
-        margin-bottom: 3rem;
+        margin-bottom: 0;
+        max-width: 100%;
     }
 
     .hero h1 {
         font-size: 2.5rem;
     }
 
-    .contact-wrapper {
-        grid-template-columns: 1fr;
+    .hero-visual {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
 
-    .nav-links {
-        display: none;
-        /* Add simple toggle later */
+    .visual-name {
+        font-size: 1.5rem;
     }
 
     .code-block-wrapper {
-        display: none;
+        display: block;
+        padding: 1rem;
+        /* Reduced padding from 1.5rem */
+        width: 100%;
+        max-width: 340px;
+        margin: 0 auto;
+        transform: none;
+        overflow-x: auto;
+        text-align: left;
+        /* Ensure code text is left-aligned */
+    }
+
+    .code-block-wrapper code {
+        font-size: 0.8rem;
+        white-space: pre;
+    }
+
+    .code-block-wrapper:hover {
+        transform: none;
+    }
+
+    .about-content {
+        grid-template-columns: 1fr;
+        /* Stack about text and stats */
+        gap: 2rem;
+        text-align: center;
+    }
+
+    .about-text p {
+        text-align: justify;
+    }
+
+    .about-stats {
+        grid-template-columns: 1fr;
+        /* Stack stats on mobile */
+        gap: 1rem;
+    }
+
+    .skills-grid {
+        grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+        /* Smaller cards for mobile */
+        gap: 1rem;
+    }
+
+    .skill-card {
+        padding: 1.5rem;
+    }
+
+    .projects-grid {
+        grid-template-columns: 1fr;
+        /* Stack projects */
+        padding: 0 1rem;
+    }
+
+    .contact-wrapper {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .contact-info {
+        text-align: center;
+    }
+
+    .experience-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .exp-header {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 1rem;
+    }
+
+    .exp-date {
+        margin-left: 0;
+    }
+
+    .exp-details {
+        text-align: left;
     }
 }
